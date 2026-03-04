@@ -2,7 +2,7 @@
 
 Interactive dashboard that models the environmental impact of replacing conventional PA66 aerospace interior panels with NyrionPlex bio-composite panels. Built for a fictional partnership between Nyriom Technologies (bio-polymers, Berlin) and Velaris Aerostructures (Tier 1 cabin interiors, Hamburg).
 
-**Live demo:** [ssb-sustainability-dashboard.vercel.app](https://ssb-sustainability-dashboard.vercel.app)
+**Live demo:** [nyriom-dashboard.vercel.app](https://nyriom-dashboard.vercel.app)
 
 ## What it does
 
