@@ -15,17 +15,8 @@ Interactive dashboard that models the environmental impact of replacing conventi
 
 React · TypeScript · Vite · Tailwind CSS · shadcn/ui · Recharts · Express
 
-## Run locally
-
-```bash
-npm install
-PORT=3000 npm run dev
-```
-
-Opens at `http://localhost:3000`.
-
 ## Context
 
-Part of a portfolio series using Nyriom Technologies as a fictional company. The other project is the [Nyriom Intel Hub](https://github.com/lollo408/nyriom-intel-hub).
+Part of a portfolio series using Nyriom Technologies as a fictional company. See also: [Nyriom Intel Hub](https://github.com/lollo408/nyriom-intel-hub).
 
-This dashboard specifically demonstrates: dashboarding, data visualization, simulation modeling, strategic thinking, and attention to detail.
+The idea behind this project was to take a real-world B2B scenario — two companies evaluating a material transition — and turn it into something a commercial team could actually use to make the case internally. It touches dashboarding and data visualization, but also the kind of thinking that goes into framing a partnership story with data.
