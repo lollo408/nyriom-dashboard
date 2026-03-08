@@ -81,7 +81,7 @@ No API keys or environment variables needed. The simulation runs entirely client
 
 | Project | Description | Stack |
 |---------|-------------|-------|
-| [Nyriom Intel Hub](https://github.com/lollo408/nyriom-intel-hub) | Competitive intelligence monitoring platform | Python · Flask · PostgreSQL |
+| [Nyriom Intelligence](https://github.com/lollo408/nyriom-intelligence) | Competitive intelligence monitoring platform | Python · Flask · PostgreSQL |
 | [Nyriom List](https://github.com/lollo408/nyriom-list) | Supplier qualification tracker | React · TypeScript · Supabase |
 
 ## Disclosure
