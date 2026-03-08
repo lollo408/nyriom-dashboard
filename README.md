@@ -1,22 +1,93 @@
 # Nyriom x Velaris — Sustainability Dashboard
 
-Interactive dashboard that models the environmental impact of replacing conventional PA66 aerospace interior panels with NyrionPlex bio-composite panels. Built for a fictional partnership between Nyriom Technologies (bio-polymers, Berlin) and Velaris Aerostructures (Tier 1 cabin interiors, Hamburg).
+Interactive simulation dashboard that models the environmental impact of replacing conventional PA66 aerospace interior panels with NyrionPlex bio-composite panels.
 
-**Live demo:** [nyriom-dashboard.vercel.app](https://nyriom-dashboard.vercel.app)
+**[Live Demo](https://nyriom-dashboard.vercel.app)**
 
-## What it does
+[![Dashboard Screenshot](docs/dashboard-screenshot.png)](https://nyriom-dashboard.vercel.app)
 
-- Simulates waste accumulation and CO2 emissions over 5–30 year projections
-- Compares NyrionPlex (3.2 kg, degrades in 4.2 years) vs PA66 (5.8 kg, 600+ year lifespan)
-- Batch-tracked degradation model — each year's production is modeled independently
-- Adjustable inputs: annual panel volume (10K–100K), projection period, weight units (kg/lbs)
+## The Problem
 
-## Stack
+Procurement teams evaluating a material switch from conventional plastics to bio-composites need long-range projections — waste accumulation, CO2 footprint, end-of-life behavior — before they can build an internal business case. Spreadsheets don't communicate the story well enough for stakeholder buy-in.
+
+## The Solution
+
+A browser-based dashboard that runs a batch-tracked degradation simulation and visualizes the results across multiple dimensions:
+
+- **End-of-life analysis** — cumulative mass produced, decomposed, and remaining in the environment for both materials side by side
+- **Carbon footprint comparison** — total CO2e emissions and avoided emissions over the projection period
+- **Material composition breakdown** — stacked bar chart showing remaining, still-degrading, and fully-degraded fractions
+- **Adjustable inputs** — annual panel volume (10K–100K), projection period (5–30 years), weight unit toggle (kg/lbs)
+
+## How the Simulation Works
+
+Each year's production is tracked as an independent batch. NyrionPlex bio-based content degrades linearly over its decay period; PA66 decomposes at a negligible fixed rate.
+
+| Parameter | NyrionPlex | PA66 (Conventional) |
+|-----------|-----------|-------------------|
+| Panel weight | 3.2 kg | 5.8 kg |
+| Bio-based content | 75% | — |
+| Degradation period | 4.2 years | 600+ years (0.1%/yr) |
+| CO2e per panel | 8.4 kg | 22.6 kg |
+
+Constants are defined in `client/src/lib/calculations.ts`.
+
+## Tech Stack
 
 React · TypeScript · Vite · Tailwind CSS · shadcn/ui · Recharts · Express
 
-## Context
+## Architecture
 
-Part of a portfolio series using Nyriom Technologies as a fictional company. See also: [Nyriom Intel Hub](https://github.com/lollo408/nyriom-intel-hub).
+```
+client/
+  src/
+    pages/Dashboard.tsx          # Main dashboard page
+    components/
+      DashboardHeader.tsx        # Branding bar
+      InputControls.tsx          # Slider, dropdowns, timeline
+      KPICardsGrid.tsx           # End-of-life KPI cards
+      CO2KPICardsGrid.tsx        # Carbon footprint KPI cards
+      ComparisonKPICard.tsx      # Side-by-side material comparison
+      DeltaKPICard.tsx           # Advantage/reduction card
+      VisualizationSection.tsx   # Charts (composition + cumulative)
+      ChartToggle.tsx            # Chart tab switcher
+      ContextDrawer.tsx          # Project context side panel
+      DashboardFooter.tsx        # Disclaimer + credits
+    lib/
+      calculations.ts            # Simulation engine + constants
+server/
+  index.ts                       # Express entry point
+  routes.ts                      # API routes
+  static.ts                      # Static file serving
+shared/
+  schema.ts                      # Shared type definitions
+```
 
-The idea behind this project was to take a real-world B2B scenario — two companies evaluating a material transition — and turn it into something a commercial team could actually use to make the case internally. It touches dashboarding and data visualization, but also the kind of thinking that goes into framing a partnership story with data.
+<details>
+<summary><strong>Local Development</strong></summary>
+
+```bash
+git clone https://github.com/lollo408/nyriom-dashboard.git
+cd nyriom-dashboard
+npm install
+PORT=3000 npm run dev
+```
+
+No API keys or environment variables needed. The simulation runs entirely client-side.
+
+</details>
+
+## Related Projects
+
+| Project | Description | Stack |
+|---------|-------------|-------|
+| [Nyriom Intel Hub](https://github.com/lollo408/nyriom-intel-hub) | Competitive intelligence monitoring platform | Python · Flask · PostgreSQL |
+| [Nyriom List](https://github.com/lollo408/nyriom-list) | Supplier qualification tracker | React · TypeScript · Supabase |
+
+## Disclosure
+
+Nyriom Technologies and Velaris Aerostructures are fictional companies. This project was built as a portfolio piece to demonstrate dashboarding, data visualization, and simulation modeling in a realistic B2B context. All data is synthetic.
+
+## License
+
+[MIT](LICENSE)
