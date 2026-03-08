@@ -4,7 +4,9 @@ Interactive simulation dashboard that models the environmental impact of replaci
 
 **[Live Demo](https://nyriom-dashboard.vercel.app)**
 
-[![Dashboard Screenshot](docs/dashboard-screenshot.png)](https://nyriom-dashboard.vercel.app)
+[![Dashboard — KPI cards and controls](docs/dashboard-hero.png)](https://nyriom-dashboard.vercel.app)
+
+[![Dashboard — Carbon footprint and chart](docs/dashboard-carbon.png)](https://nyriom-dashboard.vercel.app)
 
 ## The Problem
 
