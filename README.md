@@ -69,7 +69,7 @@ shared/
 <summary><strong>Local Development</strong></summary>
 
 ```bash
-git clone https://github.com/lollo408/nyriom-dashboard.git
+git clone https://github.com/lorenzo-leprotti/nyriom-dashboard.git
 cd nyriom-dashboard
 npm install
 PORT=3000 npm run dev
@@ -83,8 +83,8 @@ No API keys or environment variables needed. The simulation runs entirely client
 
 | Project | Description | Stack |
 |---------|-------------|-------|
-| [Nyriom Intelligence](https://github.com/lollo408/nyriom-intelligence) | Competitive intelligence monitoring platform | Python · Flask · PostgreSQL |
-| [Nyriom List](https://github.com/lollo408/nyriom-list) | Supplier qualification tracker | React · TypeScript · Supabase |
+| [Nyriom Intelligence](https://github.com/lorenzo-leprotti/nyriom-intelligence) | Competitive intelligence monitoring platform | Python · Flask · PostgreSQL |
+| [Nyriom List](https://github.com/lorenzo-leprotti/nyriom-list) | Supplier qualification tracker | React · TypeScript · Supabase |
 
 ## Disclosure
 
